@@ -4,7 +4,7 @@ React Native에 기반한 간단한 Todo App 입니다.
 
 ## WireFrame
 
-core components를 익히기 위함이 목적인 프로젝트 명목 상, 세부적인 CSS는 없습니다.
+core components를 익히기 위함이 목적인 프로젝트 명목 상, styleSheet에 기반한 기본적인 styling만 진행됩니다.
 
 ![2023-03-06 09;54;17](https://user-images.githubusercontent.com/90133704/222997795-66c587a2-8489-49a5-a2f9-1955b3e49b7c.PNG)
 
