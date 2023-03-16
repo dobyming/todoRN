@@ -1,14 +1,27 @@
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import ListIcon from '../assets/list.svg';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { Toast } from 'react-native-toast-message/lib/src/Toast';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
     const [email,setEmail] = useState('');
     const [pwd, setPwd] = useState('');  
     const auth = getAuth();
+    const navigation = useNavigation();
+
+    //Auth State 변화를 subscribe 해주기 
+    useEffect(()=>{ 
+        onAuthStateChanged(auth,user => {
+            console.log('user',user);
+            // 존재하는 계정이라면 login 후 main화면으로 이동
+            if(user) {
+                navigation.replace("Main");
+            }
+        })
+    },[]);
 
     const handleSignUp = async() => {
         try{
@@ -32,7 +45,21 @@ const LoginScreen = () => {
     };
 
     const handleLogin = async() => {
-
+        try {
+            const user = await signInWithEmailAndPassword(
+                auth,
+                email,
+                pwd
+            );
+            console.log(user);
+        } catch(error) {
+            Alert.alert(
+                "로그인 도중에 문제가 발생했습니다.",
+                error.message,
+                [{text: '닫기', onPress: () => console.log('닫기')}],
+                { cancelable: true } 
+            )
+        }
     };
 
   return (
