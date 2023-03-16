@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import MainScreen from './screens/MainScreen';
 import LoginScreen from './screens/LoginScreen';
+import app from './firebase';
 
 const Stack = createNativeStackNavigator(); //Screen, Navigator 속성 객체 반환 함수
 
