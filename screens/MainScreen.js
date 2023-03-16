@@ -5,15 +5,22 @@ import InputForm from '../components/InputForm';
 import TodoItem from '../components/TodoItem';
 import { useSelector } from 'react-redux';
 import LogoutIcon from '../assets/logout.svg';
+import { signOut, getAuth } from 'firebase/auth';
+import { useNavigation } from '@react-navigation/native';
+
 
 const MainScreen = () => {
   const todos = useSelector(state => state.todo.todos);
   // redux store에 접근하기 위한 Hooks
   const todoTasks = todos.filter((it)=> it.state === 'todo');
   const completedTasks = todos.filter((it)=> it.state === 'done');
+  const auth = getAuth();
+  const navigation = useNavigation();
+
   const handleLogout = async() => {
     try {
-      
+      await signOut(auth);
+      navigation.replace("Login");
     } catch(error) {
       console.log(error);
     }
