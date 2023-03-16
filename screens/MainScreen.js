@@ -1,20 +1,36 @@
-import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { FlatList, SafeAreaView, StyleSheet, TouchableOpacity, Text, View } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import InputForm from '../components/InputForm';
 import TodoItem from '../components/TodoItem';
 import { useSelector } from 'react-redux';
+import LogoutIcon from '../assets/logout.svg';
 
 const MainScreen = () => {
   const todos = useSelector(state => state.todo.todos);
   // redux store에 접근하기 위한 Hooks
   const todoTasks = todos.filter((it)=> it.state === 'todo');
   const completedTasks = todos.filter((it)=> it.state === 'done');
+  const handleLogout = async() => {
+    try {
+      
+    } catch(error) {
+      console.log(error);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle = {'default'} />
-      <Text style={styles.pageTitle}>ToDo App</Text>
+      <View style={styles.headerContainer}>
+        <Text style={styles.pageTitle}>ToDo App</Text>
+        <TouchableOpacity
+          style = {styles.logOutButton}
+          onPress = {handleLogout}
+        >
+          <LogoutIcon/>
+        </TouchableOpacity>
+      </View>
       <View style={styles.listView}>
         <Text style={styles.listTitle}>할 일</Text>
         {todoTasks.length !== 0 ? (
@@ -78,5 +94,19 @@ const styles = StyleSheet.create({
       fontSize: 15,
       lineHeight: 20,
       color: '#737373'
+    },
+    headerContainer:{
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    },
+    logOutButton: {
+      marginBottom: 0,
+      marginRight: 10,
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: 42,
+      height: 42,
+      
     }
 });
