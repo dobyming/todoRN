@@ -11,6 +11,11 @@ core components를 익히기 위함이 목적인 프로젝트 명목 상, styleS
 - `App` 컴포넌트 하위에 `MainScreen`이 배치됩니다.
 - `TodoItem` 과 `InputForm`은 자주 사용되는 컴포넌트이므로 `components` 폴더에서 관리합니다.
 - 상태 관리는 `Redux`를 활용합니다.
+
+### 페이지 라우팅
+
+![2023-03-16 17;43;44](https://user-images.githubusercontent.com/90133704/225562395-89c35f5f-7010-4220-b21d-573d074dbdcb.PNG)
+
 - `react navigation`으로 페이지 간 라우팅을 수행합니다.
 - `Firebase auth` 를 활용하여 회원가입/로그인 로직을 구현합니다.
 
