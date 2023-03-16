@@ -11,6 +11,8 @@ core components를 익히기 위함이 목적인 프로젝트 명목 상, styleS
 - `App` 컴포넌트 하위에 `MainScreen`이 배치됩니다.
 - `TodoItem` 과 `InputForm`은 자주 사용되는 컴포넌트이므로 `components` 폴더에서 관리합니다.
 - 상태 관리는 `Redux`를 활용합니다.
+- `react navigation`으로 페이지 간 라우팅을 수행합니다.
+- `Firebase auth` 를 활용하여 회원가입/로그인 로직을 구현합니다.
 
 ## Installation & Start
 
@@ -28,4 +30,6 @@ npm start
 
 ## logs
 
-개발 [log](https://velog.io/@damin1025/series/React-Native-Study) 를 남기는 URL입니다.
+[React Native 개발 log](https://velog.io/@damin1025/series/React-Native-Study) 를 남기는 URL입니다.
+
+[Redux Toolkit 활용 log](https://velog.io/@damin1025/series/Redux-Study) : Redux를 활용하여 state를 관리하는 것에 대한 log를 남기는 URL입니다.
