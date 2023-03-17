@@ -1,13 +1,12 @@
-import { FlatList, SafeAreaView, StyleSheet, TouchableOpacity, Text, View } from 'react-native'
 import React from 'react'
+import { FlatList, SafeAreaView, StyleSheet, TouchableOpacity, Text, View } from 'react-native'
 import { StatusBar } from 'expo-status-bar';
-import InputForm from '../components/InputForm';
-import TodoItem from '../components/TodoItem';
 import { useSelector } from 'react-redux';
-import LogoutIcon from '../assets/logout.svg';
 import { signOut, getAuth } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/native';
-
+import InputForm from '../components/InputForm';
+import TodoItem from '../components/TodoItem';
+import LogoutIcon from '../assets/logout.svg';
 
 const MainScreen = () => {
   const todos = useSelector(state => state.todo.todos);
