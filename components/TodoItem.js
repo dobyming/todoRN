@@ -1,10 +1,10 @@
 import React from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { useDispatch } from 'react-redux';
+import { updateTodo,deleteTodo } from '../redux/slices/todoSlice';
 import CheckboxUnchecked from '../assets/checkbox-unchecked.svg';
 import CheckboxChecked from '../assets/checkbox-checked.svg';
 import DeleteIcon from '../assets/delete.svg';
-import { useDispatch } from 'react-redux';
-import { updateTodo,deleteTodo } from '../redux/slices/todoSlice';
 
 const TodoItem = (props) => {
   const dispatch = useDispatch();

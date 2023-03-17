@@ -1,10 +1,9 @@
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React, { useEffect } from 'react'
-import { useState } from 'react';
-import ListIcon from '../assets/list.svg';
+import React, { useEffect, useState} from 'react'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { Toast } from 'react-native-toast-message/lib/src/Toast';
 import { useNavigation } from '@react-navigation/native';
+import ListIcon from '../assets/list.svg';
 
 const LoginScreen = () => {
     const [email,setEmail] = useState('');

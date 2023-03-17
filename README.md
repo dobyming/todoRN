@@ -2,6 +2,33 @@
 
 React Native에 기반한 간단한 Todo App 입니다.
 
+## Project Tree
+
+해당 프로젝트의 트리 구조입니다.
+
+```
+todoRN
+├─ assets
+│  ├─ checkbox-checked.svg
+│  ├─ checkbox-unchecked.svg
+│  ├─ delete.svg
+│  ├─ list.svg
+│  ├─ logout.svg
+├─ components
+│  ├─ InputForm.js
+│  └─ TodoItem.js
+├─ package-lock.json
+├─ package.json
+├─ README.md
+├─ redux
+│  ├─ slices
+│  │  └─ todoSlice.js
+│  └─ store.js
+└─ screens
+   ├─ LoginScreen.js
+   └─ MainScreen.js
+```
+
 ## WireFrame
 
 core components를 익히기 위함이 목적인 프로젝트 명목 상, styleSheet에 기반한 기본적인 styling만 진행됩니다.
